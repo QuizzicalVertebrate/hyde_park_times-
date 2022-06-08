@@ -1,0 +1,13 @@
+{% extends 'Base.html' %}
+
+{% block title %} The Hyde Park Times {% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h2>Wilkommen {{user.username}} delight in ad arguendo. Is it creepy that we know you are {{user.age}}</h2>
+<p><a href="{% url 'logout' %}">Its hotel california baby</a></p>
+{% else %}
+<p><a href="{% url 'login' %}">Get in here!</a></p>
+<p><a href="{% url 'signup' %}">I cant believe you arent even in the club</a></p>
+{% endif %}
+{% endblock content %}

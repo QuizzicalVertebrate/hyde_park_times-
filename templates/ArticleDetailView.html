@@ -1,0 +1,32 @@
+{% extends "Base.html" %}
+<!--i think this loads the ability to use absolute URLs using the static module that finds 
+static files. In django static is module that lets you grab files from multiple 
+apps -->
+{% block content %}
+<title>A project yo</title>
+<!-- <article class="media content-section"> -->
+<!-- <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}"> -->
+<!-- <div class="media-body"> -->
+<div class="article-metadata">
+    <a class="mr-2" href="#">{{ object.author }}</a>
+    <small class="text-muted">{{ object.date }}</small>
+    <!-- {% if object.author == CustomUser %} -->
+    <div></div>
+    <a class="nav-item nav-link" href="{% url 'post-delete' object.id %}">Wanna kill it </a>
+    <a class="nav-item nav-link" href="{% url 'post-update' object.id %}">Wanna change it </a>
+</div>
+<!-- {% endif %} -->
+<div>{{object.body}}</div>
+
+
+
+<a href="">You can get a unique profile for yourself</a>
+<!-- reminder that you have to have diff ones for the url name and for the brackets around the
+whole code block and that we want to use names rather than absolute URLs so that it can 
+change as you change them otherwise we get ultimate sprawl that never ends-->
+
+{% endblock content %}
+
+
+
+</body>

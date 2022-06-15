@@ -31,9 +31,8 @@ class Comment(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
-
+    title = models.CharField(max_length=100, default= 'Title')
     related_name = 'comments'
-
 
     def __str__(self):
         return (self.comment) 

@@ -12,7 +12,6 @@
             {{ article.date }}</span>
     </div>
     <div class="card-body">
-        <!-- Changes start here! -->
         <p>{{ article.body }}</p>
         <a href="{% url 'ArticleUpdateView' article.pk %}">Edit</a> |
         <a href="{% url 'Article-delete' article.pk %}">Delete</a>
@@ -21,13 +20,12 @@
         {% for comment in article.comments.all %}
         <p>
             <span class="font-weight-bold">
-                {{ comment.author }} &middot;
+                {{ comment.author }}
             </span>
             {{ comment }}
         </p>
         {% endfor %}
     </div>
-    <!-- Changes end here! -->
 </div>
 <br />
 {% endfor %}

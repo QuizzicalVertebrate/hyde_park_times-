@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-from environs import Env
+from environs import Env 
 
-#pylance error for environs but its actually working fine. server runs 
+#pylance error for environs but its actually working fine. server runs. Moving it into the the 
+# project parent dir solved the import issue. 
 
 env = Env()
 env.read_env()

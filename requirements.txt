@@ -5,6 +5,7 @@ django-crispy-forms==1.14.0
 django-dotenv
 django-env==0.2.1
 filelock==3.7.1
+environs==9.5.0
 greenlet==1.1.2
 platformdirs==2.5.2        
 python-http-client==3.3.7  

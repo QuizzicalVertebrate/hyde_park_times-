@@ -11,13 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-from environs import Env 
+
 
 #pylance error for environs but its actually working fine. server runs. Moving it into the the 
 # project parent dir solved the import issue. 
 
-env = Env()
-env.read_env()
+
 
 
 
@@ -33,11 +32,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG", default=False)
+DEBUG = os.getenv("DEBUG", default=False)
 #had to take out the bool to get this to work cuz it already is a bool in the file
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
@@ -105,10 +104,8 @@ WSGI_APPLICATION = 'django_take6.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL")
-}
-
+DATABASES = os.getenv('DATABASE_URL')
+  
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
